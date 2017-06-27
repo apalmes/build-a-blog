@@ -31,10 +31,7 @@ def blogs():
     
     return render_template("blog.html", blog_entries=blog_entries, page_title='Build-a-Blog', main_title='Build-a-Blog')
 
-@app.route('/blogpage', methods=['POST','GET'])
-def posts():
-    title = Blog.query.get('title')
-    return render_template('post.html', title=title)
+
 
 @app.route('/newpost', methods=['POST', 'GET'])
 def newpost():
