@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+ <form method='post'>
+        <label>
+            Title for your new blog:
+            <br><input type='text' name='title' value='{{request.form['title']}}'>{% with errors = get_flashed_messages(category_filter=["error"]) %}<br>
+        {%if errors%}
+        {%- for message in errors%}
+        <a class='error'>{{message}}</a>
+        {% endfor %}
+    {% endif %}
+    {% endwith %}
+  <br><br>
+        </label>
+        <label>Your new blog:
+        <br>
+        <textarea rows="17" cols="45" name='body'>{{request.form['body']}}</textarea><br>
+        </label>{% with errors = get_flashed_messages(category_filter=["error"]) %}
+        {%if errors%}
+        {%- for message in errors%}
+        <a class='error'>{{message}}</a>
+        {% endfor %}
+    {% endif %}
+    {% endwith %}
+        <br><input type="submit" value='Add Blog' />
+
+    </form>
+
+{% endblock %}
