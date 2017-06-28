@@ -1,26 +1,10 @@
-<<<<<<< HEAD
 {% extends "base.html" %}
 
 {% block content %}
 
     {% for entry in blog_entries %}
-    <li><a href='/blog?id={{entry.id}}'><h2>{{ entry.title }}</h2></a>{{ entry.body}}
-    <hr>
+    <li><a href='/blog?id={{entry.id}}'><h2>{{ entry.title }}</h2></a><p>{{ entry.body}}</p>
   {% endfor %}
   
-  </ul>
 
-=======
-{% extends "base.html" %}
-
-{% block content %}
-
-    {% for entry in blog_entries %}
-    <li><a href='/blog?id={{entry.id}}'><h2>{{ entry.title }}</h2></a>{{ entry.body}}
-    <hr>
-  {% endfor %}
-  
-  </ul>
-
->>>>>>> f2150c6b9a348dabbc4a115c14e0285cd1a93d7a
 {% endblock %}

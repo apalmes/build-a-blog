@@ -1,0 +1,70 @@
+body{
+
+    background-color: lightseagreen;
+
+}
+
+h1{
+    font-family:Palatino linotype;
+    color: white;
+    text-align:center;
+}
+
+.error{
+                color: red;
+                font-family:Palatino linotype;
+}
+
+a{
+    font-family:Palatino linotype;
+    text-align: center;
+    color:white
+}
+
+a:hover{ 
+    color: lightgrey;
+
+
+}
+    
+
+
+p {
+    font-family:Palatino linotype;
+    border: 2px solid white;
+    border-radius: 8px;
+    outline-color: white;
+    text-align: center;
+    color: white;
+    padding: 15px;
+    
+}
+
+textarea {
+    width: 400px;
+    height: 200px;
+    font-size: 15px;
+    font-family: Palatino linotype;
+    color: lightseagreen
+
+}
+.label {
+    color: white;
+}
+
+div{
+    margin-left:auto;
+    margin-right:auto;
+    width: 30%;
+    padding: 15px;
+
+}
+
+.input{
+    width:400px;
+    color:lightseagreen;
+    font-size: 15px;
+    font-family: Palatino Linotype;
+
+
+}

@@ -1,15 +1,8 @@
-<<<<<<< HEAD
 <!doctype html>
 <html>
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/base.css') }}">
     <head>
         <title>{{page_title}}</title>
-        <style> 
-            .error{
-                color: orangered;
-
-
-        }
-        </style>
     </head>
 <body>
 <a href='/blog'>View Blogs</a> | <a href='/newpost'>Create New Blog</a>
@@ -23,30 +16,4 @@
     {% endblock %}
 
 </body>
-=======
-<!doctype html>
-<html>
-    <head>
-        <title>{{page_title}}</title>
-        <style> 
-            .error{
-                color: orangered;
-
-
-        }
-        </style>
-    </head>
-<body>
-<a href='/blog'>View Blogs</a> | <a href='/newpost'>Create New Blog</a>
-    
-   <h1 align='center'>{{main_title}}</h1>
-
-   
-
-    {% block content %}
-    
-    {% endblock %}
-
-</body>
->>>>>>> f2150c6b9a348dabbc4a115c14e0285cd1a93d7a
 </html>

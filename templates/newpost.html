@@ -1,64 +1,27 @@
-<<<<<<< HEAD
 {% extends "base.html" %}
 
 {% block content %}
 
  <form method='post'>
-        <label>
-            Title for your new blog:
-            <br><input type='text' name='title' value='{{request.form['title']}}'>{% with errors = get_flashed_messages(category_filter=["error"]) %}<br>
-        {%if errors%}
-        {%- for message in errors%}
-        <a class='error'>{{message}}</a>
-        {% endfor %}
-    {% endif %}
-    {% endwith %}
-  <br><br>
+        <div><label>
+            <a>Title for your new blog:</a>
+            <br><input class='input' type='text' name='title' value='{{request.form['title']}}'></div>
         </label>
-        <label>Your new blog:
+        
+        <div><label><a>Your new blog:</a>
         <br>
-        <textarea rows="17" cols="45" name='body'>{{request.form['body']}}</textarea><br>
-        </label>{% with errors = get_flashed_messages(category_filter=["error"]) %}
-        {%if errors%}
-        {%- for message in errors%}
-        <a class='error'>{{message}}</a>
-        {% endfor %}
-    {% endif %}
-    {% endwith %}
-        <br><input type="submit" value='Add Blog' />
+        <textarea name='body'>{{request.form['body']}}</textarea><br>
+        </label></div>
+
+        <div>{% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+            {% for category, message in messages %}
+            <a class="{{category}}">{{ message }}</a>
+            {% endfor %}
+            {% endif %}
+            {% endwith %}</div>
+        <div><input type="submit" value='Add Blog' /></div>
 
     </form>
 
-=======
-{% extends "base.html" %}
-
-{% block content %}
-
- <form method='post'>
-        <label>
-            Title for your new blog:
-            <br><input type='text' name='title' value='{{request.form['title']}}'>{% with errors = get_flashed_messages(category_filter=["error"]) %}<br>
-        {%if errors%}
-        {%- for message in errors%}
-        <a class='error'>{{message}}</a>
-        {% endfor %}
-    {% endif %}
-    {% endwith %}
-  <br><br>
-        </label>
-        <label>Your new blog:
-        <br>
-        <textarea rows="17" cols="45" name='body'>{{request.form['body']}}</textarea><br>
-        </label>{% with errors = get_flashed_messages(category_filter=["error"]) %}
-        {%if errors%}
-        {%- for message in errors%}
-        <a class='error'>{{message}}</a>
-        {% endfor %}
-    {% endif %}
-    {% endwith %}
-        <br><input type="submit" value='Add Blog' />
-
-    </form>
-
->>>>>>> f2150c6b9a348dabbc4a115c14e0285cd1a93d7a
 {% endblock %}
