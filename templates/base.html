@@ -1,25 +1,31 @@
 <!doctype html>
-<html>
-    <head>
-        <title>{{page_title}}</title>
-        <style> 
-            .error{
-                color: orangered;
-
-
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ page_title }}</title>
+    <style>
+        .error {
+            color: orangered;
         }
-        </style>
-    </head>
+    </style>
+</head>
 <body>
-<a href='/blog'>View Blogs</a> | <a href='/newpost'>Create New Blog</a>
-    
-   <h1 align='center'>{{main_title}}</h1>
+<div>
+    <a href='/blog'>Main Blog Page</a> | <a href='/new_post'>Create New Blog Post</a>
+</div>
 
-   
+<h1 align='center'>{{ main_title }}</h1>
 
-    {% block content %}
-    
-    {% endblock %}
+{% with messages = get_flashed_messages(with_categories=True) %}
+    <ul>
+        {% for category,message in messages %}
+            <li class=""{{ category }}>{{ message }}</li>
+        {% endfor %}
+    </ul>
+{% endwith %}
+
+{% block content %}
+{% endblock %}
 
 </body>
 </html>

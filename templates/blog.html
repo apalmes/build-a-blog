@@ -3,10 +3,9 @@
 {% block content %}
 
     {% for entry in blog_entries %}
-    <li><a href='/blog?id={{entry.id}}'><h2>{{ entry.title }}</h2></a>{{ entry.body}}
-    <hr>
-  {% endfor %}
-  
-  </ul>
+        <ul><a href='/blog?id={{ entry.id }}'><h2>{{ entry.title }}</h2></a>{{ entry.body }}
+        <hr>
+    {% endfor %}
+        </ul>
 
 {% endblock %}
