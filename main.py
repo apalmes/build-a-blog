@@ -28,10 +28,6 @@ def index():
     main_title = 'Build-a-Blog'
 
     if request.method == 'GET':
-        # requested route format -> ./blog?id=6
-        # refer to Hello Flask apps from curriculum; specifically the hour & minutes /valid-time example
-        # this introduces GET requests with query parameters / data in the URL route
-        # the format is: ```return redirect('/blog?id={0}'.format(id))```
         id = request.args.get('id')
         return redirect('/blog.html?id={0}'.format(id))
 
