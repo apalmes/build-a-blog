@@ -38,7 +38,7 @@ def blogs():
     
     if request.method == 'GET':
         if 'id' in request.args:
-            blog_id = request.args['id']
+            blog_id = request.args.get('id')
             blog_content= Blog.query.get(blog_id)
             return render_template('post.html', blog_content=blog_content, page_title=page_title)
 
