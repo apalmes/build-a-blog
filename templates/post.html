@@ -1,8 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
+    <h1>{{ blog_content.title }}</h1><br><br>
 
-    <a><h2>{{ Blog.title }}</h2></a>{{ Blog.body }}
-    <hr>
-
+    <p>{{ blog_content.body }}</p>
 {% endblock %}
